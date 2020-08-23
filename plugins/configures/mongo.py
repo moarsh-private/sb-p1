@@ -14,7 +14,7 @@ DB = client.data_base
 ADMIN = DB.ADMIN    
 USERS = DB.USERS    
 
-#for i in USERS.find(): USERS.delete_one({"_id":i["_id"]})
-for i in USERS.find(): print(i)
-#for i in ADMIN.find(): ADMIN.delete_one({"_id":i["_id"]})
-for i in ADMIN.find(): print(i)
+for i in USERS.find(): USERS.delete_one({"_id":i["_id"]})
+#for i in USERS.find(): print(i)
+for i in ADMIN.find(): ADMIN.delete_one({"_id":i["_id"]})
+#for i in ADMIN.find(): print(i)

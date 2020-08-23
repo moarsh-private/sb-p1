@@ -9,9 +9,8 @@ ADMIN = getenv("ADMIN")
 async def pre_proccessing_pv(_: Client, m: Message):
     text = m.text
     uid = m.from_user.id
-    user = mongo.USERS.find_one({"uid":uid})
-    all_lock = mongo.ADMIN.find_one({"lockpv":"yes"})
-    
+    user = mongo.USERS.find_one({"uid":uid}) or {}
+    all_lock = mongo.ADMIN.find_one({"lockpv":"yes"})    
     if all_lock:
         await m.delete()
     else:
@@ -42,7 +41,7 @@ async def pre_proccessing_admin(_: Client, m: Message):
     print(f"{mono_mode=}")
     print(f"{bold_mode=}")
     st = ""
-    
+
     if slow_mode and text != "!slowmode off":
         char = ""
         for i in text:

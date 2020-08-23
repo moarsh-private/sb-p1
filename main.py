@@ -5,6 +5,6 @@ session_name='BAAr_YwxVyqZBDlMlalJP8OHZb66X74WH25PlxedNgTpjru4474dYQ27YSXQ4t1ZlP
 logging.basicConfig(
     format='[%(levelname) 5s/%(asctime)s] %(name)s: %(message)s', level=logging.WARNING)
 
-app = Client(session_name,app_version="1.0.0",device_model="@beQrity Self Bot",system_version="v1.0",)
+app = Client('session',app_version="1.0.0",device_model="@beQrity Self Bot",system_version="v1.0",)
 
 app.run()
